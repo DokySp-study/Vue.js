@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>hello vue.js</title>
+    <script src="../ref/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="simple">
+        <h2>{{message}}</h2>
+    </div>
+
+
+    <script type="text/javascript">
+        var model = {
+            message: "The First Vue.js App!"
+        };
+
+        var simple = new Vue({
+            el: '#simple',
+            data: model
+        })
+    </script>
+
+</body>
+
+</html>
