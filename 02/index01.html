@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- 초기 설정 및 vue.js라이브러리 가져옴 -->
+    <meta charset="utf-8">
+    <script src="../ref/vue.js"></script>
+    <title>02-01</title>
+</head>
+
+<body>
+
+    <div id="simple">
+        <h2>{{msg}}</h2>
+    </div>
+
+    <script type="text/javascript">
+        var model = {
+            msg: "The first Vue.js app"
+        }
+
+        var simple = new Vue({
+            el: "#simple",
+            data: model
+        })
+    </script>
+
+</body>
+
+</html>
