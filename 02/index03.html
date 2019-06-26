@@ -4,29 +4,27 @@
 
 <head>
     <meta charset="utf8">
-    <script src="../ref/vue.js"></script>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
     <title>02-03: v-bind</title>
 </head>
 
 <body>
 
     <div id="simple">
-
-        <input id="a" type="text" v-bind :value="exp">
+        <!-- v-bind :value 혹은 v-bind: value 이런 식으로 쓰면 안됨! (띄어쓰지 말기) -->
+        <input id="a" type="text" v-bind:value="expr">
         <br>
-        <img v-bind :src="imgPath" alt="none">
+        <img v-bind:src="imgPath" alt="none">
 
     </div>
 
     <script type="text/javascript">
         var model = {
-            exp: "v-bind derective",
+            expr: "v-bind derective",
             imgPath: "img/logo.png"
         };
 
-
-
-
+        // 위에서 코드가 잘못되면 콘솔에서는 뷰인스턴스가 잘못되었다고 뜬다!
         var simple = new Vue({
             el: '#simple',
             data: model
