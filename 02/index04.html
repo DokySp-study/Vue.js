@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf8">
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <title>02-04: v-model</title>
+</head>
+
+
+<body>
+
+    <div id="simple">
+        <input type="text" v-model="exp">
+        <br>
+        <img :src="imgPath" alt="">
+        <!-- v-model:src 이거는 지원하지 않는다.(뭐 어찌보면 당연한거일지도)-->
+        <!-- 애초에 이미지 태그에서 이미지 소스를 사용자가 수정한다는게 말이 안된다. -->
+        <br> input name:
+        <h2 v-text="exp"></h2>
+
+        input img:
+        <img :src="exp" alt="wrong path">
+
+    </div>
+
+
+
+    <script>
+        var test = new Vue({
+            el: "#simple",
+            data: {
+                exp: "input name",
+                imgPath: "img/logo1.jpg"
+            }
+        })
+    </script>
+
+
+
+</body>
+
+</html>

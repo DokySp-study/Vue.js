@@ -11,10 +11,13 @@
 <body>
 
     <div id="simple">
+        <input type="text" :value="expr">
+        <!-- <input id="a" type="text" v-bind:value="expr"> -->
+        <!-- v-bind:를 :로 생략이 가능하다! -->
         <!-- v-bind :value 혹은 v-bind: value 이런 식으로 쓰면 안됨! (띄어쓰지 말기) -->
-        <input id="a" type="text" v-bind:value="expr">
         <br>
-        <img v-bind:src="imgPath" alt="none">
+        <!-- <img v-bind:src="imgPath" alt="none"> -->
+        <img :src="imgPath" alt="x">
 
     </div>
 
@@ -31,11 +34,6 @@
         })
     </script>
 
-
-
-
 </body>
-
-
 
 </html>

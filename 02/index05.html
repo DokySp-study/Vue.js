@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf8">
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <title>02-05: v-models</title>
+</head>
+
+<body>
+
+    <div id="shop1">
+        <div>좋아하는 과일을 모두 골라주세요:</div>
+        <input type="checkBox" value="0" v-model="fruits">
+        <input type="checkbox" value="1" v-model="fruits">
+        <input type="checkbox" value="2" v-model="fruits">
+        <input type="checkbox" value="3" v-model="fruits">
+        <input type="checkbox" value="4" v-model="fruits">
+    </div>
+    <hr>
+    <div id="shop2">
+        selected: <span v-html="fruits"></span>
+    </div>
+
+    <script type="text/javascript">
+        var model = {
+            fruits: []
+        }
+
+        var test1 = new Vue({
+            el: "#shop1",
+            data: model
+        })
+        var test2 = new Vue({
+            el: "#shop2",
+            data: model
+        })
+    </script>
+
+</body>
+
+
+</html>
