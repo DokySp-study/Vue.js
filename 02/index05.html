@@ -23,10 +23,29 @@
         selected: <span v-html="fruits"></span>
     </div>
 
+    <!-- Modifier for vModel -->
+    <hr>
+    <div id="mod">
+        trim: <input type="text" v-model.trim="trimedName">
+        <!-- 트림 옵션 쓰면 데이터에 문자열을 좌우 트림(공백제거)해줌! -->
+        <!-- 근데 input태그에서도 적용되는건 신기.. -->
+        <br> lazy: <input type="text" v-model.lazy="name">
+        <br> number: <input type="text" v-model.number="number"><br>
+        <br> name: <span v-html="name"></span>
+        <br> number: <span v-html="number"></span>
+        <br> trimedName: <span v-html="trimedName"></span>
+        <br>
+    </div>
+
+
     <script type="text/javascript">
         var model = {
             fruits: []
         }
+
+        // 한 모델을 두 개의 뷰인스턴스에서 참조!
+        // 즉, test1의 V에서 v-model로 M이 수정되었다면
+        // 수정된 M을 test2에서 불러와서 반영
 
         var test1 = new Vue({
             el: "#shop1",
@@ -35,6 +54,20 @@
         var test2 = new Vue({
             el: "#shop2",
             data: model
+        })
+
+
+        // Modifier for vModel
+
+        var modModel = {
+            name: "",
+            number: 0,
+            trimedName: ""
+        }
+
+        var mod = new Vue({
+            el: "#mod",
+            data: modModel
         })
     </script>
 
