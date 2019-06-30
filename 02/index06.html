@@ -5,17 +5,42 @@
 <head>
     <meta charset="utf8">
     <script src="../ref/vue.js"></script>
-    <title>02-05: v-models</title>
+    <title>02-06: v-if, v-show</title>
 </head>
 
 <body>
+    v-if <br>
+    <!--img태그를 주석처리로 컨트롤 (조건 해당 시 매번 랜더링)-->
+    <div id="account1">
+        deposit: <input type="text" v-model="amount">
+        <img src="img/error.png" v-if="amount < 0" title="음수는 허용하지 않습니다." style="width: 15px; height: 15px; vertical-align:middle;">
+    </div>
 
-    deposit: <input type="text" v-model="amount">
-    <img src="" alt="">
+    <br> v-show <br>
+    <!--img태그를 display속석으로 컨트롤 (이미 랜더링 되어있음)-->
+    <div id="account2">
+        deposit: <input type="text" v-model=ㅇ "amount">
+        <img src="img/error.png" v-show="amount < 0" title="음수는 허용하지 않습니다." style="width: 15px; height: 15px; vertical-align:middle;">
+    </div>
 
 
+    <script type="text/javascript">
+        // 한 뷰인스턴스에는 하나의 엘리먼트만 연결 가능하다!!
+        // 만약 엘리먼트 2개의 이름이 같다면, 첫 번째 엘리먼트만 연결된다!         
+        var test1 = new Vue({
+            el: '#account1',
+            data: {
+                amount: 0
+            }
+        })
 
-
+        var test2 = new Vue({
+            el: '#account2',
+            data: {
+                amount: 0
+            }
+        })
+    </script>
 
 </body>
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf8">
+    <script src="../ref/vue.js"></script>
+    <title>02-07: v-if, v-else</title>
+</head>
+
+<body>
+    <div id="account">
+        deposit : <input type="text" v-model="bal">
+        <br> Your grade :
+        <span v-if="bal > 10000">GOLD</span>
+        <span v-else-if="10000 >= bal && bal > 5000">Silver</span>
+        <!-- bal > 5000 -->
+        <span v-else-if="5000 >= bal && bal > 1000">Bronze</span>
+        <!-- bal > 1000 -->
+        <span v-else>Basic</span>
+    </div>
+
+    <script type="text/javascript">
+        var test = new Vue({
+            el: '#account',
+            data: {
+                bal: 0
+            }
+        })
+    </script>
+
+
+
+</body>
+
+</html>
