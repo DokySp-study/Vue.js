@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf8">
+    <title>06-06: DOM 템플릿 작성 주의사항</title>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+
+<script type="text/javascript">
+    Vue.component("option-component", {
+        template: "<option>hello</option>"
+    })
+</script>
+
+<body>
+    <div id="app">
+        <select>
+        <!-- <option-component></option-component> //얘는 DOM 구문분석 시 씹히기 때문에 안된다. -->
+        <option is="option-component"></option>
+        <option is="option-component"></option>
+
+        <!-- * script 태그 안에 템플릿 넣고 DOM요소로 감싸는거 => ㅇ
+             * .vue 확장자 사용하는 단일 컴포넌트 작성 시 => ㅇ
+             * template 태그 안에 작성 => X                     -->
+    </select>
+    </div>
+</body>
+
+<script type="text/javascript">
+    Vue.config.devtools = true
+    var v = new Vue({
+        el: "#app"
+    })
+</script>
+
+</html>

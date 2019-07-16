@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+    <meta charset="utf8">
+    <title>06-04: 컴포넌트 시작</title>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<body>
+    <template id="mainTemplate">
+    <!-- <script type="text/x-template" id="mainTemplate"> 이렇게 써도 된다. -->
+        <div>
+            <!-- 최상위 태그는 하나여야 하기 때문에 하나의 태그(여기선 <div>)로 싸줘야 한다! -->
+            Hello World!
+        </div>
+    </template>
+    <script type="text/javascript">
+        Vue.component("hello-component", {
+                template: '#mainTemplate'
+            })
+            // 이렇게 템플릿을 그냥 안에 쌩으로 넣는 것을 "인라인 템플릿"이라 한다. // 비추하는 방법
+    </script>
+
+    <div id="app">
+        <hello-component></hello-component>
+        <hello-component></hello-component>
+        <hello-component></hello-component>
+        <!-- h1 <- 얘는 계층 구조에 들어가지 않는다. -->
+    </div>
+
+    <script type="text/javascript">
+        var v = new Vue({
+            el: "#app"
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+    <meta charset="utf8">
+    <title>06-01: 컴포넌트 시작(템플릿 문자열 분리)</title>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        Vue.component("hello-component", {
+                template: '<div>Hello world!</div>'
+            })
+            // 이렇게 템플릿을 그냥 안에 쌩으로 넣는 것을 "인라인 템플릿"이라 한다. // 비추하는 방법
+    </script>
+
+    <div id="app">
+        <hello-component></hello-component>
+        <hello-component></hello-component>
+        <hello-component></hello-component>
+        <h1>asdfasdf</h1>
+        <!-- h1 <- 얘는 계층 구조에 들어가지 않는다. -->
+    </div>
+
+    <script type="text/javascript">
+        var v = new Vue({
+            el: "#app"
+        })
+    </script>
+
+</body>
+
+</html>

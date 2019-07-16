@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+    <meta charset="utf8">
+    <title>06-12: 컴포넌트, props</title>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<template id="listTemplate">
+    <li>
+        {{myMessage}}
+    </li>
+</template>
+
+<script>
+    Vue.component("list-component", {
+        template: "#listTemplate",
+        props: ["myMessage"]
+    })
+</script>
+
+<body>
+    <div id="app">
+        <ul>
+            <list-component myMessage="안녕하세여"></list-component>
+            <!-- HTML은 카멜케이싱을 대소문자 구분이 없어 인식을 못하므로 케밥케이싱을 해주어야 한다! -->
+            <list-component my-message="저는"></list-component>
+            <list-component my-message="프롭스 테스트입니당"></list-component>
+        </ul>
+    </div>
+</body>
+
+
+<script>
+    Vue.config.devtools = true
+    var vm = new Vue({
+        el: "#app"
+    })
+</script>
+
+</html>
