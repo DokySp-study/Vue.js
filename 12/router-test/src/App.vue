@@ -8,6 +8,11 @@
           <li><router-link to="/home">Home</router-link></li>
           <li><router-link to="/about">About</router-link></li>
           <li><router-link to="/Contact">Contact</router-link></li>
+          <li><a href="/#/home">Home</a></li>
+          <li><a href="/#/about">About</a></li>
+          <li><a href="/#/cOnTaCt">Contact</a></li>  
+          <!-- Url is not sensitive about Capital or Low. -->
+          <!-- If don't have uri, then show nothing. -->
         </ul>
       </nav>
     </div>
@@ -30,16 +35,17 @@ const router = new VueRouter({
   routes: [
     {path: "/", component: Home},
     {path: "/home", component: Home},
-    {path: "/abut", component: About},
+    {path: "/about", component: About},
     {path: "/Contact", component: Contact},
   ]
 })
 
 export default {
   name: 'app',
-  components: {
-    router
-  }
+  // components: {
+  //   router
+  // }
+  router  // not a component!! (Vue Obj)
 }
 </script>
 
