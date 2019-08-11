@@ -5,10 +5,10 @@
         </h1>
         <div class="wrapper">
             <div class="box" v-for="item in contacts" :key="item.no">
-                <router-link :to="/contact/+item.no">{{ item.name }}</router-link>
+                <router-link :to="/contacts/+item.no">{{ item.name }}</router-link>
             </div>
         </div>
-
+        <router-view></router-view>
     </div>
 </template>
 
